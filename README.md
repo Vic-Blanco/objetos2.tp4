@@ -16,7 +16,8 @@ pruebe manualmente luego de cada cambio.
 Escriba un programa que cargue un conjunto de empleados de un archivo de texto y envíe por email un saludo de feliz
 cumpleaños a quienes cumplan años hoy.
 
-- El archivo de empleados tiene la siguiente estructura:
+El archivo de empleados tiene la siguiente estructura:
+
 - apellido, nombre, fecha de nacimiento, email
 - Young, Angus, 1982/10/08, angus@acdc.com
 - Johnson, Brian, 1975/09/11, brian@acdc.com
@@ -47,11 +48,13 @@ Se requiere:
 Implemente los métodos pero ahora leyendo y escribiendo en una base de datos relacional. Diseñe Usted la/s tabla/s de
 concursos e inscriptos.
 
-- El archivo inscriptos.txt debe quedar así:
+El archivo inscriptos.txt debe quedar así:
+
 - apellido, nombre, teléfono, email, idconcurso
 - Young, Angus, 4444-898789, angus@acdc.com, 1
 - Johnson, Brian, 7789-658987, brian@acdc.com, 2
 
-- El archivo concursos.txt tiene la siguiente estructura:
+El archivo concursos.txt tiene la siguiente estructura:
+
 - idconcurso, nombre, fechaInicioInscripcion, fechaFinInscripcion
 - 1, concurso x, 2020/06/01, 2020/07/01 
