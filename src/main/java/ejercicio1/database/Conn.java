@@ -14,7 +14,6 @@ public class Conn {
         this.url = conn;
         this.user = user;
         this.pwd = pwd;
-
     }
 
     Connection open() {

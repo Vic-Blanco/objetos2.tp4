@@ -1,8 +1,11 @@
 package ejercicio1.database;
 
 import ejercicio1.model.InscriptosDataBaseService;
+import ejercicio1.model.Participante;
 
 import java.sql.Connection;
+import java.util.ArrayList;
+import java.util.List;
 
 public class JdbcInscriptosDataBaseService implements InscriptosDataBaseService {
 
@@ -14,7 +17,7 @@ public class JdbcInscriptosDataBaseService implements InscriptosDataBaseService 
 
 
     @Override
-    public void nuevoParticipante(String nombre, String telefono, String region) {
+    public void createParticipante(String nombre, String telefono, String region) {
         String sql = "INSERT INTO participantes (nombre, telefono, region) VALUES (?, ?, ?)";
         try (Connection conn = this.conn.open();
              var stmt = conn.prepareStatement(sql)) {
@@ -27,8 +30,23 @@ public class JdbcInscriptosDataBaseService implements InscriptosDataBaseService 
         }
     }
 
-    /*@Override
-    public List<ParticipanteData> participantes() {
-        return List.of();
-    }*/
+    @Override
+    public List<Participante> participantes() {
+        String sql = "SELECT * FROM participantes";
+        try (Connection conn = this.conn.open();
+             var stmt = conn.prepareStatement(sql);
+             var rs = stmt.executeQuery()) {
+            List<Participante> participantes = new ArrayList<>();
+            while (rs.next()) {
+                String nombre = rs.getString("nombre");
+                String telefono = rs.getString("telefono");
+                String region = rs.getString("region");
+                participantes.add(new Participante(nombre, telefono, region));
+            }
+            return participantes;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+    }
 }

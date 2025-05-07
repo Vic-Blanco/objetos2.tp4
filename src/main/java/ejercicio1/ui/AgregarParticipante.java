@@ -48,6 +48,15 @@ public class AgregarParticipante extends JFrame {
             }
         });
         contentPane.add(botonCargar);
+        // Add the new button to open ListaParticipantes
+        JButton botonVerLista = new JButton("Ver Lista de Participantes");
+        botonVerLista.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                new ListaParticipantes(inscripcion); // Open the ListaParticipantes window
+            }
+        });
+        contentPane.add(botonVerLista);
+
         setContentPane(contentPane);
         contentPane.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
         pack();
@@ -57,13 +66,12 @@ public class AgregarParticipante extends JFrame {
     private void onBotonCargar() {
 
         try {
-            inscripcion.nuevoParticipante(new Participante(nombre.getText(), telefono.getText(), region.getText()));
+            inscripcion.nuevoParticipante(nombre.getText(), telefono.getText(), region.getText());
             JOptionPane.showMessageDialog(this, "Participante agregado correctamente");
-            dispose();
+            //dispose();
         } catch (RuntimeException e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
-
     }
 }
 
