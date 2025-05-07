@@ -38,14 +38,14 @@ a datos.
 
 Se requiere:
 
-- ● Modifique y termine de implementar utilizando diseño en capas (invirtiendo la dependencias hacia model).
-- ● Implemente los métodos faltantes:
-    - ○ todosLosConcursos(): Recupera del archivo concursos.txt los concursos si
-        - su inscripción se encuentra abierta. Y los muestra en el Combo.
-    - ○ saveInscription(): Graba las personas que se inscriben en el archivo inscriptos.txt según el formato definido.
--
-- Implemente los métodos pero ahora leyendo y escribiendo en una base de datos relacional. Diseñe Usted la/s tabla/s de
-  concursos e inscriptos.
+- Modifique y termine de implementar utilizando diseño en capas (invirtiendo la dependencias hacia model).
+- Implemente los métodos faltantes:
+    - todosLosConcursos(): Recupera del archivo concursos.txt los concursos si su inscripción se encuentra abierta. Y
+      los muestra en el Combo.
+    - saveInscription(): Graba las personas que se inscriben en el archivo inscriptos.txt según el formato definido.
+
+Implemente los métodos pero ahora leyendo y escribiendo en una base de datos relacional. Diseñe Usted la/s tabla/s de
+concursos e inscriptos.
 
 - El archivo inscriptos.txt debe quedar así:
 - apellido, nombre, teléfono, email, idconcurso
